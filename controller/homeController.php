@@ -20,21 +20,19 @@ switch ( $route->getAction() ) {
         }
         break;
 
-    case 'home':
-
+    case 'table':
         $dbObj = new db();
 
-        $sql = "SELECT * FROM app_user";
+        $sql = "SELECT * FROM product";
         $dbObj->dbPrepare($sql);
         $dbObj->dbExecute([]);
-        $row = $dbObj->dbFetch("assoc");
 
-        print '<pre>';
-        print_r($row);
-        print '</pre>';
+        // $row = $dbObj->dbFetch("assoc");
+        // print_r($row);
+        // exit;
 
         include( APP_VIEW .'/home/homeSubNav.php' );
-        include( APP_VIEW .'/home/homeView.php' );
+        include( APP_VIEW .'/home/tableView.php' );
         break;
 
     default:
