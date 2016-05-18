@@ -23,7 +23,18 @@ switch ( $route->getAction() ) {
     case 'table':
         $dbObj = new db();
 
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT
+                 p.name as product_name,
+                 p.description as product_description,
+                 p.qty_on_hand,
+                 p.retail,
+                 c.name as category_name
+                FROM
+                  product p
+                INNER JOIN
+                  product_categories pc ON pc.product_id = p.id
+                INNER JOIN
+                  categories c ON c.id = pc.category_id";
         $dbObj->dbPrepare($sql);
         $dbObj->dbExecute([]);
 
