@@ -42,7 +42,7 @@ CREATE TABLE `blog` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `post` text COLLATE utf8_unicode_ci NOT NULL,
-  `create_user` int(11) NOT NULL,
+  `create_user` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `create_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -51,8 +51,9 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `title`, `post`, `create_user`, `create_date`) VALUES
-(1, 'Hello World', 'My first post!', 1, '2016-05-14'),
-(2, 'Yet another post', 'My Second post.\r\nis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '2016-05-17');
+(1, 'Hello World', 'My first post!', 'jdoe', '2016-05-14'),
+(2, 'Yet another post', 'My Second post.\r\nis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'jdoe', '2016-05-17'),
+(3, 'Test 123', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam efficitur eu turpis tempor lobortis. Morbi sit amet libero leo. Donec ultrices mollis tortor. In ultrices dui est, quis posuere est luctus quis. Nullam egestas ex sed enim sagittis accumsan. Aenean nibh mauris, dictum pharetra aliquam quis, feugiat sit amet ipsum. Cras vitae felis neque. Fusce lectus est, vestibulum a aliquet non, congue quis urna. Nullam sagittis sit amet massa ac dictum. Fusce diam est, consequat id dui varius, condimentum interdum ligula. Donec eget urna purus. Sed varius libero non massa porta fringilla. Ut ut sodales enim.\r\n\r\nPhasellus id tristique metus. Duis justo sem, ullamcorper vel ante a, vestibulum vehicula odio. Nam tincidunt orci et orci tincidunt, ac congue magna hendrerit. Vivamus congue nunc eu ligula elementum, eget dictum nisl iaculis. Aliquam nec quam pellentesque, vehicula mauris a, accumsan ipsum. Praesent imperdiet leo quis lacus eleifend pellentesque. Nulla eget arcu tellus. Nulla facilisi. Vivamus vitae elementum elit. Donec malesuada blandit nisl, in efficitur sapien cursus at. Vivamus convallis nunc in libero dignissim, sit amet aliquet lectus lobortis. Quisque ullamcorper pretium ex, eget sodales velit ultrices cursus. Nullam rhoncus, ligula sit amet placerat convallis, massa magna facilisis urna, et mattis lacus nisl vel justo. Sed ultricies feugiat massa, a commodo tellus dignissim ut. Proin nunc dolor, tincidunt eu eros in, facilisis feugiat purus.\r\n\r\nPraesent eget nisl elit. Suspendisse potenti. Donec a velit non tortor dapibus maximus. Sed non purus diam. Aenean bibendum lobortis augue, eu consectetur massa. Quisque velit lectus, semper vitae consequat eu, consequat in felis. Maecenas nisl orci, pharetra eget efficitur eu, vehicula eu arcu.', 'jdoe', '2016-05-25');
 
 -- --------------------------------------------------------
 
@@ -166,7 +167,7 @@ ALTER TABLE `app_user`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `categories`
 --
